@@ -1,0 +1,9 @@
+# directories
+**/lib
+**/node_modules
+**/test
+**/src/Diamond
+**/interfaces
+
+# files
+**/src/Diamond.sol

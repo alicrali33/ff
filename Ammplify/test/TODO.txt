@@ -1,0 +1,17 @@
+Facets tested by integration and individually.
+Pools file tested on a forked Uniswap Pool
+Asset file tested by itself and also with a walk so that the asset node info is filled in.
+Fee file tested by a simple storage test but also with two positions with fee differences.
+Vault folder tested by copying tests over from burve.
+
+For the view comparison, we'll just test that at a high level against the actual balances when we close a position.
+If there's a mismatch we'll dig deeper.
+
+An integration test where we add liquidity into a range,
+compute the nodes it should have added to, and check the individual range positions
+on uniswap that it matches.
+Then we add more and see that the overlapping nodes were updated as expected and the non-overlapping nodes are exact.
+Then we borrow liquidity and see that the balances in nodes have reduced.
+Then we burn the original liq and see that the leftover is just our second add minus the borrow.
+Then we let time pass and see when we add the orginal liq again, the overlapping nodes are higher than before because of compounding.
+Then we also swap and remove the second add and see that its still higher than the original plus borrow fees because of compounding the swap fees.
